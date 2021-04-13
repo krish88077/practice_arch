@@ -1,4 +1,5 @@
 import 'package:moor/moor.dart';
+import 'package:practice_arch/core/services/product_service.dart';
 import 'package:practice_arch/model/product.dart';
 
 part 'moor_database.g.dart';
@@ -26,7 +27,8 @@ class ProductList extends Table {
 
 @UseDao(tables: [ProductList])
 class ProductListDao extends DatabaseAccessor<AppDatabase>
-    with _$ProductListDaoMixin {
+    with _$ProductListDaoMixin
+    implements ProductService {
   final AppDatabase db;
 
   ProductListDao(this.db) : super(db);

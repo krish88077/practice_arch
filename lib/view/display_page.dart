@@ -20,6 +20,11 @@ class _DisplayPageState extends State<DisplayPage> {
   @override
   void initState() {
     super.initState();
+    initDb();
+  }
+
+  void initDb(){
+    Provider.of<AppViewModel>(context,listen: false).init();
   }
 
   int _l;
